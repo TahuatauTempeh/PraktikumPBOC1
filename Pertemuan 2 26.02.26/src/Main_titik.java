@@ -16,5 +16,8 @@ public class Main_titik {
         System.out.printf("Distance from origin: %.2f%n", T1.getJarakPusat());
 
         System.out.printf("Distance from origin: %.2f%n", T1.getJarakTitik(T2));
+
+        T1.getRefleksiX();
+        T1.getRfleksiY();
     }
 }

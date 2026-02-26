@@ -84,4 +84,12 @@ public class Titik {
     public void refleksiY(){
         this.absis *= -1;
     }
+
+    public void getRefleksiX(){
+        System.out.println("(" + this.absis + ", " + (-this.ordinat) + ")");
+    }
+
+    public void getRfleksiY(){
+        System.out.println("(" + (-this.absis) + ", " + this.ordinat + ")");
+    }
 }

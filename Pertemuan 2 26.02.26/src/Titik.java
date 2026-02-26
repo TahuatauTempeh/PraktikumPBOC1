@@ -80,4 +80,8 @@ public class Titik {
         //     this.refleksiX();
         // }
     }
+
+    public void refleksiY(){
+        this.absis *= -1;
+    }
 }

@@ -73,5 +73,11 @@ public class Titik {
         return Math.sqrt(sub_x + sub_y);
     }
 
-    
+    public void refleksiX(){
+        this.ordinat *= -1;
+
+        // for (int i = 0; i < 2; i++) {
+        //     this.refleksiX();
+        // }
+    }
 }

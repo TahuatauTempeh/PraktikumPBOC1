@@ -5,14 +5,18 @@ public class Titik {
     static int countertitik = 0;
 
     // methods
-    Titik(){
+    public Titik(){
         this(0, 0);
     }
 
-    Titik(double absis, double ordinat){
+    public Titik(double absis, double ordinat){
         this.absis = absis;
         this.ordinat = ordinat;
         countertitik += 1;
+    }
+
+    public static int getCounterTitik(){
+        return countertitik;
     }
 
     public double getAbsis(){

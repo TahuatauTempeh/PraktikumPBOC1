@@ -46,8 +46,32 @@ public class Garis {
         double delta_x = this.ending.getAbsis() - this.beginning.getAbsis();
         double delta_y = this.ending.getOrdinat() - this.beginning.getOrdinat();
 
-        return delta_x / delta_y;
+        return delta_y / delta_x;
     }
 
-    
+    public Titik getTitikTengah(){
+        double middle_of_x = (this.beginning.getAbsis() + this.ending.getAbsis()) / 2;
+        double middle_of_y = (this.beginning.getOrdinat() + this.ending.getOrdinat()) / 2;
+
+        return new Titik(middle_of_x, middle_of_y);
+    }
+
+    public boolean isSejajarGaris(Garis line){
+        return this.getGradien() == line.getGradien();
+    }
+
+    public boolean isTegakLurusGaris(Garis line){
+        return (this.getGradien() * line.getGradien()) == -1;
+    }
+
+    public void printGaris(){
+        System.out.println("Line from point (" + this.beginning.getAbsis() + ", " + this.beginning.getOrdinat() + ") to point (" + this.ending.getAbsis() + ", " + this.ending.getOrdinat() + ")");
+    }
+
+    public String getFormula(){
+        double m = this.getGradien();
+        double cons = this.beginning.getOrdinat() - (m * this.beginning.getAbsis());
+
+        return "y = " + m + "x + (" + cons + ")";
+    }
 }

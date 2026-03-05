@@ -1,3 +1,8 @@
+// Nama     : Azka Aqylla Maulana
+// NIM      : 24060124140195
+// Lab      : C1
+// Tanggal  :
+
 public class Dosen {
     private String nip;
     private String nama;

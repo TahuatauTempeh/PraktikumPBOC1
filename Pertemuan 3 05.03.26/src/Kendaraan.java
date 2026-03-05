@@ -8,8 +8,10 @@ public class Kendaraan {
     }
 
     public Kendaraan(String No, String TP){
-        noPlat = No;
-        types = TP;
+        if (TP.equals("Mobil") || TP.equals("mobil") || TP.equals("Motor") || TP.equals("motor")) {
+            noPlat = No;
+            types = TP;   
+        }
     }
 
     public String getNoPlat(){

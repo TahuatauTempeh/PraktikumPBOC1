@@ -1,7 +1,14 @@
+// File         : Kendaraan
+// Deskripsi    : Well, kendaraan
+// NIM / Nama   : 24060124140195
+// Tanggal      : 06.03.26
+
 public class Kendaraan {
+    // attributes
     private String noPlat;
     private String types;
 
+    // constructor
     public Kendaraan(){
         noPlat = "_";
         types = "_";
@@ -14,6 +21,7 @@ public class Kendaraan {
         }
     }
 
+    // selector
     public String getNoPlat(){
         return noPlat;
     }
@@ -22,12 +30,21 @@ public class Kendaraan {
         return types;
     }
 
+    // mutator
     public void setNoPlat(String NP){
         noPlat = NP;
     }
 
     public void setType(String TTP){
-        types = TTP;
+        if (TTP.equals("Mobil") || TTP.equals("mobil") || TTP.equals("Motor") || TTP.equals("motor")){
+            types = TTP;   
+        }
+    }
+
+    // other method(s)
+    public void printKendaraan(){
+        System.out.println("Plat Nomor: " + noPlat);
+        System.out.println("Tipe Kendaraan: " + types);
     }
 }
 

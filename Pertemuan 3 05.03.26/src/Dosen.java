@@ -1,13 +1,15 @@
-// Nama     : Azka Aqylla Maulana
-// NIM      : 24060124140195
-// Lab      : C1
-// Tanggal  :
+// File         : Dosen
+// Deskripsi    : Dosen
+// NIM / Nama   : 24060124140195
+// Tanggal      : 06.03.26
 
 public class Dosen {
+    // attributes
     private String nip;
     private String nama;
     private String prodi;
 
+    // constructor
     public Dosen(){
         nip = "_";
         nama = "_";
@@ -20,6 +22,7 @@ public class Dosen {
         prodi = Pro;
     }
 
+    // selector
     public String getNIP(){
         return nip;
     }
@@ -32,6 +35,7 @@ public class Dosen {
         return prodi;
     }
 
+    // mutator
     public void setNIP(String NIP){
         nip = NIP;
     }
@@ -42,5 +46,12 @@ public class Dosen {
 
     public void setProdi(String Prodi){
         prodi = Prodi;
+    }
+
+    // other method(s)
+    public void printDosen(){
+        System.out.println("NIP: " + nip);
+        System.out.println("Nama: " + nama);
+        System.out.println("Prodi: " + prodi);
     }
 }

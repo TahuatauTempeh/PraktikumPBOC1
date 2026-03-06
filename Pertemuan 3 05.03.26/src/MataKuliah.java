@@ -1,8 +1,15 @@
+// File         : Matakuliah.java
+// Deskripsi    : Mata kuliah :0
+// NIM / Nama   : 24060124140195
+// Tanggal      : 06.03.26
+
 public class MataKuliah {
+    // attributes
     private String idMatkul;
     private String nama_matkul;
     private int sks;
 
+    // constructore
     public MataKuliah(){
         idMatkul = "_";
         nama_matkul = "_";
@@ -15,6 +22,7 @@ public class MataKuliah {
         sks = s;
     }
 
+    // selector
     public String getIDMatkul(){
         return idMatkul;
     }
@@ -27,6 +35,7 @@ public class MataKuliah {
         return sks;
     }
 
+    // mutator
     public void setIDMatkul(String id){
         idMatkul = id;
     }
@@ -37,5 +46,12 @@ public class MataKuliah {
 
     public void setSks(int ss){
         sks = ss;
+    }
+
+    // other method(s)
+    public void printMatkul(){
+        System.out.println("ID Matakuliah: " + idMatkul);
+        System.out.println("Nama Matkul: " + nama_matkul);
+        System.out.println("Jumlah SKS: " + sks);
     }
 }

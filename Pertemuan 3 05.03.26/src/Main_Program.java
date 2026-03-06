@@ -56,5 +56,7 @@ public class Main_Program {
         Sylvester.printDetailMahasiswa();
 
         System.out.println("Total SKS: " + Sylvester.getTotalSKS());
+
+        System.out.println("Total Subjects Taken: " + Sylvester.getJumlahMatkul());
     }
 }

@@ -125,5 +125,9 @@ public class Mahasiswa {
 
         return count;
     }
+
+    public int getJumlahMatkul(){
+        return listMatkul.size();
+    }
 }
     

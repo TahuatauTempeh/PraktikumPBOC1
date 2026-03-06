@@ -115,5 +115,15 @@ public class Mahasiswa {
 
         System.out.println("]");
     }
+
+    public int getTotalSKS(){
+        int count = 0;
+
+        for (int i = 0; i < listMatkul.size(); i++) {
+            count += listMatkul.get(i).getSKS();
+        }
+
+        return count;
+    }
 }
     

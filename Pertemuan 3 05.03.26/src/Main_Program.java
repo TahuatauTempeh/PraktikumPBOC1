@@ -54,5 +54,7 @@ public class Main_Program {
         System.out.println("||  Check Mahasiswa  ||");
 
         Sylvester.printDetailMahasiswa();
+
+        System.out.println("Total SKS: " + Sylvester.getTotalSKS());
     }
 }

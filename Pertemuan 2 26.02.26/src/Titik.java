@@ -5,6 +5,8 @@ public class Titik {
     static int countertitik = 0;
 
     // methods
+    
+    // constructor
     public Titik(){
         this(0, 0);
     }
@@ -15,6 +17,7 @@ public class Titik {
         countertitik += 1;
     }
 
+    // selector
     public static int getCounterTitik(){
         return countertitik;
     }
@@ -27,6 +30,7 @@ public class Titik {
         return this.ordinat;
     }
 
+    // mutator
     public void setAbsis(double x){
         this.absis = x;
     }
@@ -35,6 +39,7 @@ public class Titik {
         this.ordinat = y;
     }
 
+    // other methods
     public void geser(double x, double y){
         this.absis = x;
         this.ordinat = y;

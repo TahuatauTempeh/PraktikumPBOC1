@@ -1,5 +1,27 @@
-public class Main_Garis {
-    public static void main(String[] args) throws Exception {
+public class Main_File {
+    public static void main(String[] args) {
+        // titik
+        Titik T1 = new Titik();
+        Titik T2 = new Titik();
+        
+        T1.setAbsis(67);
+        T1.setOrdinat(69);
+
+        T2.setAbsis(-69);
+        T2.setOrdinat(-30);
+
+        System.out.println("The absis of T1: " + T1.getAbsis());
+
+        System.out.println("The ordinance of T1: " + T1.getOrdinat());
+
+        System.out.printf("Distance from origin: %.2f%n", T1.getJarakPusat());
+
+        System.out.printf("Distance from origin: %.2f%n", T1.getJarakTitik(T2));
+
+        T1.getRefleksiX();
+        T1.getRfleksiY();
+
+        // garis
         // allocate garis
         Garis line_1 = new Garis();
         Garis line_2 = new Garis();
@@ -53,5 +75,6 @@ public class Main_Garis {
 
         // get formula of line_1
         System.out.println("Formula of line_1: " + line_1.getFormula());
+
     }
 }

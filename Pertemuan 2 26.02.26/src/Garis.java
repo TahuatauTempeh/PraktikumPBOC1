@@ -1,8 +1,17 @@
+// File         : Garis.java
+// Deskripsi    : Garis
+// NIM / Nama   : 24060124140195
+// Tanggal      : 26.02.26
+
 public class Garis {
+    // attributes
     Titik beginning;
     Titik ending;
     static  int counterGaris = 0;
 
+    // methods
+
+    // constructor
     public Garis(){
         this.beginning = new Titik(0, 0);
         this.ending = new Titik(1, 1);
@@ -15,6 +24,7 @@ public class Garis {
         counterGaris ++;
     }
 
+    // selector
     public Titik getStartTitik(){
         return this.beginning;
     }
@@ -23,6 +33,11 @@ public class Garis {
         return this.ending;
     }
 
+    public static int getCounterGaris(){
+        return counterGaris;
+    }
+
+    // mutator
     public void setStartTitik(Titik starTitik){
         this.beginning = starTitik;
     }
@@ -31,10 +46,7 @@ public class Garis {
         this.ending = endTitik;
     }
 
-    public static int getCounterGaris(){
-        return counterGaris;
-    }
-
+    // other methods
     public double getPanjangGaris(){
         double x_length = Math.pow(Math.abs(this.beginning.getAbsis() - this.ending.getAbsis()), 2);
         double y_length = Math.pow(Math.abs(this.beginning.getOrdinat() - this.ending.getOrdinat()), 2);

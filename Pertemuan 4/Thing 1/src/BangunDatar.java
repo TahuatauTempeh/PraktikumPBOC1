@@ -1,5 +1,5 @@
-
-// Deskripsi    : Bangung datar
+// File         : BangunDatar.java
+// Deskripsi    : BangunDatar
 // NIM / Nama   : 24060124140195
 // Tanggal      : -
 

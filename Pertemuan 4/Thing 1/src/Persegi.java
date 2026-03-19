@@ -1,6 +1,6 @@
 // File         : Persegi.java
-// Deskripsi    : Persegi
-// NIM / Nama   : 24060124140195
+// Deskripsi    : Persegi file
+// NIM / Nama   : 24060124140195 / Azka Aqylla Maulana
 // Tanggal      : -
 
 public class Persegi extends BangunDatar {

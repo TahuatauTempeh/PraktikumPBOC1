@@ -1,0 +1,46 @@
+abstract class Manusia
+    // attributes
+    nama                : string, protected
+    tgl_mulai_kerja     : date, protected
+    alamat              : string, protected
+    pendapatan          : real, protected
+    counter_manusia     : static integer = 0, protected
+
+    // methods
+
+    // konstruktor
+    public procedure Manusia(input name: string, input tgl: date, input address, input salary: real)
+        nama <- name
+        tgl_mulai_kerja <- tgl
+        alamat <- address
+        pendapatan <- salary
+        counter_manusia <- counter_manusia + 1
+
+    // selektor
+    public function getNama() -> string
+        -> nama
+    
+    public function getStartDate() -> date
+        -> tgl_mulai_kerja
+
+    public function getAlamat() -> string
+        -> alamat
+    
+    public function getPendapatan() -> real
+        -> pendapatan
+
+    // mutator
+    public procedure setAlamat(input address: string)
+        alamat <- address
+    
+    public procedure setPendapatan(input salary: real)
+        pendapatan <- salary
+    
+    // other methods
+    public procedure printInforManusia()
+        output("Nama: " + nama)
+        output("Tanggal mulai kerja: " + tgl_mulai_kerja)
+        output("Alamat: " + alamat)
+        output("Pendapatan: " + pendapatan)
+
+    public function abstract hitungMasaKerja(input tgl: date) -> integer

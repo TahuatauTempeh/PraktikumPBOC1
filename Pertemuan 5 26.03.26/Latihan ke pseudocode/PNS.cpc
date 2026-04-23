@@ -1,0 +1,42 @@
+class PNS extends Manusia
+    // attributes
+    NIP         : string, private
+    counter_PNS : static integet = 0, private
+
+    // methods
+
+    // konstruktor
+    public procedure PNS(input name: string, input tgl: date, input address: string, input salary: real, input nIP: string)
+        super(name, tgl, address, salary)
+        NIP <- nIP
+        counter_PNS <- counter_PNS + 1
+
+    // selektor
+    public function getNIP() -> string
+        -> NIP
+    
+    // other methods
+    @override
+    public procedure printInforManusia()
+        super.printInforManusia()
+        print("NIP: " + NIP)
+
+    @override
+    public function abstract hitungMasaKerja(input tgl: date) -> integer
+        // local variable
+        current_year    : integer
+        start_year      : integer
+        how_long        : integer
+        function getCurrentYear() -> integer
+            {returns the year of the current date}
+        function getYear() -> integer
+            {returns the year from a date}
+
+        // algorithm 
+        if (tgl_mulai_kerja != null) then
+            current_year <- getCurrentYear()
+            start_year <- getYear(tgl_mulai_kerja)
+            how_long <- (current_year - start_year) + 5
+            -> how_long
+        else
+            -> 0

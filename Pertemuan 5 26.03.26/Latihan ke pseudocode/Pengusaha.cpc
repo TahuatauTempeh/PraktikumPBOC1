@@ -1,0 +1,7 @@
+class Pengusaha extends Manusia
+    // attributes
+    NPWP                : string, private
+    counter_Pengusaha   : static integer = 0, private
+
+    // methods
+    

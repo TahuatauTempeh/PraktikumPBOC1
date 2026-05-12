@@ -26,7 +26,7 @@ public class Teman {
     };
 
     public void setNama(int indeks, String nama){
-        Lnama.set(indeks, nama);
+        Lnama.set((indeks - 1), nama);
     }
 
     public void addNama(String nama){

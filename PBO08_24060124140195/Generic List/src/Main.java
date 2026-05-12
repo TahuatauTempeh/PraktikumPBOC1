@@ -67,5 +67,21 @@ public class Main {
         
         System.out.println("\n=== Total Bobot Menggunakan OperatorGenerik ===");
         System.out.println("Total : " + total_bobot + " kg");
+
+        
+        System.out.println("\n=== Generic List ===");
+        Data<Anabul> dataAnabul = new Data<>();
+
+        dataAnabul.setIsi(1, new Anggora("Loki", 3.2));
+        dataAnabul.setIsi(2, new KembangTelon("Sari", 2.8));
+        dataAnabul.setIsi(3, new Anjing("Bruno"));
+
+        System.out.println("Size : " + dataAnabul.getSize());
+
+        for (int i = 1; i <= dataAnabul.getSize(); i++) {
+            Anabul pet = dataAnabul.getIsi(i);
+            System.out.print("Isi(" + i + ") : " + pet.Nama + " -> ");
+            pet.Bersuara();
+        }
     }
 }

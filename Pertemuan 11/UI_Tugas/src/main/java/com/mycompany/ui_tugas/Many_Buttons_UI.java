@@ -4,6 +4,8 @@
  */
 package com.mycompany.ui_tugas;
 
+import javax.swing.DefaultListModel;
+
 /**
  *
  * @author nurist
@@ -11,6 +13,7 @@ package com.mycompany.ui_tugas;
 public class Many_Buttons_UI extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Many_Buttons_UI.class.getName());
+    DefaultListModel<String> whatever_this_thing_is;
 
     /**
      * Creates new form Many_Buttons_UI
@@ -28,21 +31,94 @@ public class Many_Buttons_UI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        List_of_Items_thing = new javax.swing.JList<>();
+        Insert_data_button = new javax.swing.JButton();
+        Field_text_insert_thing = new javax.swing.JTextField();
+        Insert_name_label = new javax.swing.JLabel();
+        Add_item_button = new javax.swing.JButton();
+        Update_data_thing = new javax.swing.JButton();
+        Delete_one_data_button = new javax.swing.JButton();
+        Clear_all_data_button = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        List_of_Items_thing.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(List_of_Items_thing);
+
+        Insert_data_button.setText("Insert Data");
+
+        Field_text_insert_thing.setText("-");
+
+        Insert_name_label.setText("Insert name");
+
+        Add_item_button.setText("Add");
+
+        Update_data_thing.setText("Update");
+
+        Delete_one_data_button.setText("Delete");
+
+        Clear_all_data_button.setText("Clear All");
+        Clear_all_data_button.addActionListener(this::Clear_all_data_buttonActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 380, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Insert_data_button, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(Insert_name_label)
+                            .addGap(18, 18, 18)
+                            .addComponent(Field_text_insert_thing, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(Add_item_button, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Delete_one_data_button, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(Update_data_thing, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Clear_all_data_button, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)))))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 346, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(Insert_data_button)
+                        .addGap(96, 96, 96)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Field_text_insert_thing, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Insert_name_label))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Add_item_button)
+                            .addComponent(Update_data_thing))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Delete_one_data_button)
+                            .addComponent(Clear_all_data_button))))
+                .addContainerGap(127, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void Clear_all_data_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Clear_all_data_buttonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Clear_all_data_buttonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -70,5 +146,14 @@ public class Many_Buttons_UI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Add_item_button;
+    private javax.swing.JButton Clear_all_data_button;
+    private javax.swing.JButton Delete_one_data_button;
+    private javax.swing.JTextField Field_text_insert_thing;
+    private javax.swing.JButton Insert_data_button;
+    private javax.swing.JLabel Insert_name_label;
+    private javax.swing.JList<String> List_of_Items_thing;
+    private javax.swing.JButton Update_data_thing;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

@@ -11,7 +11,7 @@ import java.sql.*;
 public class MySQLPersonDAO implements PersonDAO{
     @Override
     public void savePerson(Person manusia_biasa) throws Exception{
-        String name = Person.getName();
+        String name = manusia_biasa.getName();
         
 //        create a connection witht the SQL
         Class.forName("com.mysql.jdbc.Driver");

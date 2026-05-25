@@ -11,7 +11,7 @@ show tables;
 delete from 
 	person
 where
-	id = 2;
+	id = 1;
 
 describe person;
 

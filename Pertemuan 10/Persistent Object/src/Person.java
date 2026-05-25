@@ -7,7 +7,10 @@
  *  File:   Person.java
  *  Desc:   The file containing the Person class?
  */
-public class Person {
+
+import java.io.*;
+
+public class Person implements Serializable{
 //    attributes
     private int id;
     private String name;

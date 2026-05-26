@@ -2,17 +2,16 @@ create database PBO;
 
 use PBO;
 
-create table person(
-	id int primary key auto_increment not null,
-    name varchar (100));
+drop table mahasiswa;
+
+create table Mahasiswa(
+	id int(11) primary key not null,
+    name varchar (20));
     
+describe mahasiswa;
+
 show tables;
 
-delete from 
-	person
-where
-	id = 1;
+select * from mahasiswa;
 
-describe person;
-
-select * from person;
+delete from mahasiswa where id = 5;

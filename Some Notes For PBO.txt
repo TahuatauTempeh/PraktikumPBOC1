@@ -1,0 +1,107 @@
+Some stuff for SQL queries in Java?
+
+1. Write your SQL string (with ? as placeholders)
+2. Prepare it  →  koneksi.prepareStatement(query)
+3. Fill the ?s →  sta.setXxx(position, value)
+4. Execute it  →  depends on the SQL type (see below)
+5. Handle the result (if any)
+6. Wrap everything in try/catch
+
+Which execute method to use?
+
+Gives data back  →  executeQuery()   →  returns a ResultSet
+Just changes data → executeUpdate()  →  returns nothing useful
+
+SELECT --> executeQuery() --> Return rows
+INSERT --> executeUpdate() --> Adding data
+UPDATE --> executeUpdate() --> Changing data
+DELETE --> executeUpdate() --> Removing data
+
+Which .set...() to use?
+
+int --> sta.setInt(position, value)
+String --> sta.setString(position, value)
+double --> sta.setDouble(position, value)
+boolean --> sta.setBoolean(position, value)
+Date --> sta.setDate(postion, value)
+
+An example would be:
+
+"insert into mahasiswa(id, nama, gpa) values (?, ?, ?)"
+//                                             1  2  3
+
+sta.setInt(1, student.getId());      // 1st ?
+sta.setString(2, student.getName()); // 2nd ?
+sta.setDouble(3, student.getGpa());  // 3rd ?
+
+
+A somewhat template for insert / delete / update
+
+public void doSomething(/* params */){
+    try {
+        String query_command = "your SQL here with ?s";
+        PreparedStatement sta = koneksi.prepareStatement(query_command);
+        sta.setXxx(1, value1); // fill each ?
+        sta.setXxx(2, value2);
+        sta.executeUpdate();   // just run it, no result needed
+    } catch(SQLException sql){
+        System.out.println(sql.getMessage());
+    }
+}
+
+
+A somewhat template for selection
+
+One row:
+
+public SomeObject getByID(int id){
+    SomeObject obj = null;  // default if not found
+    try {
+        String query_command = "select * from table where id = ?";
+        PreparedStatement sta = koneksi.prepareStatement(query_command);
+        sta.setInt(1, id);
+        ResultSet resultant = sta.executeQuery();  // get rows back
+        if(resultant.next()){                      // if a row exists
+            obj = new SomeObject(
+                resultant.getInt("id"),
+                resultant.getString("name")
+            );
+        }
+    } catch(SQLException sql){
+        System.out.println(sql.getMessage());
+    }
+    return obj;
+}
+
+Multiple rows:
+
+public List<SomeObject> getAll(){
+    List<SomeObject> list = new ArrayList<>();
+    try {
+        String query_command = "select * from table";
+        PreparedStatement sta = koneksi.prepareStatement(query_command);
+        ResultSet resultant = sta.executeQuery();
+        while(resultant.next()){                   // loop every row
+            list.add(new SomeObject(
+                resultant.getInt("id"),
+                resultant.getString("name")
+            ));
+        }
+    } catch(SQLException sql){
+        System.out.println(sql.getMessage());
+    }
+    return list;
+}
+
+
+Some useful checklists
+
+1. What SQL am I writing?
+   → Write the string with ?s
+
+2. What type is each ? value?
+   → Use the matching setXxx()
+
+3. Does my SQL return rows?
+   YES (SELECT) → executeQuery() + ResultSet + if/while + getXxx()
+   NO  (others) → executeUpdate() and you're done
